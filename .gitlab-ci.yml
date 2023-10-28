@@ -1,0 +1,38 @@
+# @since 2023-10-28
+
+image: ubuntu:latest
+
+pages:
+  stage: deploy
+  before_script:
+    # https://github.com/volta-cli/website/issues/43
+    - apt-get -y update
+    - apt-get -y install curl
+    - curl https://get.volta.sh | bash
+    - export VOLTA_HOME=$HOME/.volta
+    - export PATH=$VOLTA_HOME/bin:$PATH
+    - volta install node
+    - node --version
+    - npm --version
+    - npm install
+
+  script:
+    # Alternate with without Volta. (Volta's better).
+    # Better yet, pre-build image with this all installed.
+    ###
+    # - curl -sL https://deb.nodesource.com/setup_20.x | bash
+    # - apt-get install nodejs -yq
+    # - cd source/
+    # - npm install multi-file-swagger
+    # - multi-file-swagger -o yaml temp.yml > swagger.yml
+    # - apt-get install npm
+    # - cd ..
+    ###
+    - npx quartz build
+
+  artifacts:
+    paths:
+      - public
+
+  only:
+    - main

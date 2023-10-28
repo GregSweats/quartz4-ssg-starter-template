@@ -1,6 +1,7 @@
 {
     "conventionalCommits.scopes": [
         "obsidian-vault",
-        "vscode"
+        "vscode",
+        "quartz"
     ]
 }
