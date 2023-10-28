@@ -1,0 +1,37 @@
+
+.obsidian/themes/
+# .obsidian/appearance.json
+.obsidian/workspace.json
+
+# https://forum.obsidian.md/t/looking-for-an-example-gitignore-file/47351/4
+
+# https://www.reddit.com/r/ObsidianMD/comments/qb55c7/syncing_over_gitgithub_how_to_set_up_gitignore/
+
+
+###
+# https://github.com/trustedsec/Obsidian-Vault-Structure/blob/main/.gitignore
+###
+# to exclude Obsidian workspace settings (including plugin and hotkey configurations)
+# .obsidian/*
+
+# OR only to exclude workspace cache
+# .obsidian/workspace/*
+
+# Exclude plugins
+.obsidian/plugins/*
+!.obsidian/hotkeys.json
+!.obsidian/plugins/**/data.json
+
+.obsidian/.waka_box_cache
+
+###
+# .reddit.com/r/ObsidianMD/comments/qb55c7/syncing_over_gitgithub_how_to_set_up_gitignore/
+###
+
+
+# docs/.obsidian/* # <--- #broken Line removes all plugins, even with the explicit allow for data.json below.
+# .obsidian/*.*
+# .obsidian/plugins/*/*.* 
+#.obsidian/plugins/*/manifest.*
+# !.obsidian/plugins/**/data.json
+# /data.json

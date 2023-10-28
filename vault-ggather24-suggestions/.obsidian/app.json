@@ -1,0 +1,22 @@
+{
+  "promptDelete": true,
+  "newFileLocation": "current",
+  "alwaysUpdateLinks": true,
+  "showUnsupportedFiles": true,
+  "readableLineLength": false,
+  "autoPairMarkdown": true,
+  "autoPairBrackets": true,
+  "spellcheckLanguages": null,
+  "spellcheck": true,
+  "pdfExportSettings": {
+    "includeName": false,
+    "pageSize": "Letter",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  },
+  "attachmentFolderPath": "_attachments",
+  "showLineNumber": true,
+  "propertiesInDocument": "visible",
+  "trashOption": "local"
+}
