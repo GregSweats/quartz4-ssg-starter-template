@@ -1,0 +1,98 @@
+// @ts-ignore
+import clipboardScript from "./scripts/clipboard.inline"
+import clipboardStyle from "./styles/clipboard.scss"
+import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
+function Body({ children }: QuartzComponentProps) {
+
+  
+
+const excalidrawRef = useRef<ExcalidrawImperativeAPI>(null);
+
+const [viewModeEnabled, setViewModeEnabled] = useState(false);
+const [zenModeEnabled, setZenModeEnabled] = useState(false);
+const [gridModeEnabled, setGridModeEnabled] = useState(false);
+const [blobUrl, setBlobUrl] = useState<string | null>(null);
+const [canvasUrl, setCanvasUrl] = useState<string | null>(null);
+const [exportWithDarkMode, setExportWithDarkMode] = useState<boolean>(false);
+const [shouldAddWatermark, setShouldAddWatermark] = useState<boolean>(false);
+const [theme, setTheme] = useState<ExcalidrawProps["theme"]>("light");
+
+// https://codesandbox.io/s/excalidraw-types-9h2dm
+
+useEffect(() => {
+  const onHashChange = () => {
+    const hash = new URLSearchParams(window.location.hash.slice(1));
+    const libraryUrl = hash.get("addLibrary");
+    if (libraryUrl) {
+      excalidrawRef.current!.updateLibrary(libraryUrl, hash.get("token"));
+    }
+  };
+  window.addEventListener("hashchange", onHashChange, false);
+  return () => {
+    window.removeEventListener("hashchange", onHashChange);
+  };
+}, []);
+
+
+const updateScene = () => {
+  const sceneData = {
+    elements: [
+      {
+        type: "rectangle",
+        version: 141,
+        versionNonce: 361174001,
+        isDeleted: false,
+        id: "oDVXy8D6rom3H1-LLH2-f",
+        fillStyle: "hachure",
+        strokeWidth: 1,
+        strokeStyle: "solid",
+        roughness: 1,
+        opacity: 100,
+        angle: 0,
+        x: 100.50390625,
+        y: 93.67578125,
+        strokeColor: "#c92a2a",
+        backgroundColor: "transparent",
+        width: 186.47265625,
+        height: 141.9765625,
+        seed: 1968410350,
+        groupIds: []
+      }
+    ],
+    appState: {
+      viewBackgroundColor: "#edf2ff"
+    }
+  };
+  excalidrawRef.current.updateScene(sceneData);
+};
+
+
+  return <div id="quartz-body">
+    {children}
+    <div style={{ height: "500px" }}>
+       <Excalidraw
+          ref={excalidrawRef}
+          initialData={InitialData}
+          onChange={(elements: readonly ExcalidrawElement[], state: AppState) =>
+            console.log("Elements :", elements, "State : ", state)
+          }
+          onPointerUpdate={(payload) => console.log(payload)}
+          onCollabButtonClick={() =>
+            window.alert("You clicked on collab button")
+          }
+          viewModeEnabled={viewModeEnabled}
+          zenModeEnabled={zenModeEnabled}
+          gridModeEnabled={gridModeEnabled}
+          theme={theme}
+          name="Custom name of drawing"
+          // renderFooter={renderFooter}
+          // renderTopRightUI={renderTopRightUI}
+        />
+    </div>
+  </div>
+}
+
+Body.afterDOMLoaded = clipboardScript
+Body.css = clipboardStyle
+
+export default (() => Body) satisfies QuartzComponentConstructor

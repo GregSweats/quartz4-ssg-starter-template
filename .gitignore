@@ -13,7 +13,19 @@ node_modules
 # Otherwise we'd have to prefix the examples with the vault path.
 
 
-
+#
+# QUARTZ - Obsidian SSG
+# https://github.com/jackyzha0/quartz/blob/v4/.gitignore
+#
+public
+prof
+tsconfig.tsbuildinfo
+quartz/.quartz-cache/
+#.replit
+#replit.nix
+#
+# /QUARTZ
+#
 
 #########################################################
 #    ___                __                    _         #
