@@ -3,13 +3,15 @@ import * as Plugin from "./quartz/plugins"
 
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "try-wiki-vault2",
+    pageTitle: "quartz4-ssg-starter-template",
     enableSPA: true,
     enablePopovers: true,
     analytics: {
       provider: "plausible",
     },
-    baseUrl: "https://g_stevens.gitlab-pages.mgcorp.co/try-wiki-vault2",
+    // todo: Pull from `package.json` `homepage` property.
+    // Standard NPM package property, nice to auto-set but allow override.
+    baseUrl: "https://gregsweats.github.io/quartz4-ssg-starter-template",
     ignorePatterns: ["private", "templates", "templater", ".obsidian"],
     defaultDateType: "modified",
     theme: {

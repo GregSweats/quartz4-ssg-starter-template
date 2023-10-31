@@ -1,15 +1,15 @@
 {
-  "name": "try-wiki-vault2",
-  "description": "🌱 publish your digital garden and notes as a website",
+  "name": "quartz4-ssg-starter-template",
+  "description": "Unofficial Starter Template for Quartz v4+; 🌱 publish your digital garden and notes as a website",
   "private": true,
   "version": "4.1.0",
   "type": "module",
-  "author": "Greg Stevens <greg.stevens@aylo.com>",
+  "author": "Greg Sweats <gregsweats@mailo.com>",
   "license": "UNLICENSED",
-  "homepage": "https://g_stevens.pages-gitlab.mgcorp.co/try-wiki-vault2",
+  "homepage": "https://gregsweats.github.io/quartz4-ssg-starter-template",
   "repository": {
     "type": "git",
-    "url": "https://gitlab.mgcorp.co/g_stevens/try-wiki-vault2"
+    "url": "https://github.com/GregSweats/quartz4-ssg-starter-templaten"
   },
   "scripts": {
     "docs": "npx quartz build --serve -d docs",
@@ -30,7 +30,10 @@
     "digital-garden",
     "markdown",
     "blog",
-    "quartz"
+    "quartz",
+    "obsidian",
+    "obsidianmd",
+    "plugin"
   ],
   "bin": {
     "quartz": "./quartz/bootstrap-cli.mjs"
