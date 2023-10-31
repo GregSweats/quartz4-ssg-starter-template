@@ -1,6 +1,8 @@
 {
     "recommendations": [
         "wakatime.vscode-wakatime",
-        "vivaxy.vscode-conventional-commits"
+        "vivaxy.vscode-conventional-commits",
+        "babakks.vscode-copy-from-terminal",
+        "babakks.vscode-send-to-terminal"
     ]
 }
