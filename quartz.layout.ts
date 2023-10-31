@@ -8,7 +8,7 @@ export const sharedPageComponents: SharedLayout = {
   footer: Component.Footer({
     links: {      
       "Browse Tags": "/tags/",
-      "GitLab Pages Build": "/",
+      "GitLab Pages Build": "/quartz4-ssg-starter-template/",
       "GitLab Source Repo": "https://github.com/GregSweats/quartz4-ssg-starter-template",
       "Obsidian": "https://obsidian.md/",
     },
